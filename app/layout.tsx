@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { IconArrowUpRight } from "@tabler/icons-react";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +18,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <Link
+          href="https://in.pinterest.com/pin/ma-chuda--148055906497159317/"
+          target="_blank"
+          className="fixed right-2 bottom-2 bg-white hover:bg-gray-100 rounded-2xl px-4 py-2 text-sm text-gray-950 flex items-center gap-2">
+          <IconArrowUpRight size={20} /> Collect testimonials for your platform with Opinionate
+        </Link>
+      </body>
     </html>
   );
 }
